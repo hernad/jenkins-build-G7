@@ -7,10 +7,13 @@ BRANCH=oo_boot2docker_iso
 [ ! -d G7-windows ] && git clone https://github.com/hernad/G7-windows.git
 
 cd G7-windows
-git checkout $BRANCH -f
-git fetch origin/$BRANCH
-git merge
 
+
+
+git checkout $BRANCH -f
+
+git fetch origin
+git merge origin/$BRANCH
 
 ./script/build-windows
 
