@@ -2,10 +2,13 @@
 
 uname -a
 
-git clone https://github.com/hernad/G7-windows.git
+BRANCH=oo_boot2docker_iso
 
+git clone https://github.com/hernad/G7-windows.git
+git pull
+git checkout $BRANCH -f
 cd G7-windows
-make windows
+./script/build-windows
 
 cp dist/G7-windows-i386.exe ..
 
