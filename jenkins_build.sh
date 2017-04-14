@@ -6,7 +6,8 @@ BRANCH=oo_boot2docker_iso
 
 git clone https://github.com/hernad/G7-windows.git
 git checkout $BRANCH -f
-git pull
+git pull origin $BRANCH
+
 cd G7-windows
 ./script/build-windows
 
