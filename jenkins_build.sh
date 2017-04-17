@@ -10,7 +10,7 @@ BRANCH=oo_boot2docker_iso
 
 cd G7-windows
 
-[ -f ../$FILE ] && rm $FILE
+[ -f ../$FILE ] && rm ../$FILE
 
 git checkout $BRANCH -f
 
