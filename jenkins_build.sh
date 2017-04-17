@@ -2,13 +2,15 @@
 
 uname -a
 
+FILE=G7-windows-i386.exe
+ 
 BRANCH=oo_boot2docker_iso
 
 [ ! -d G7-windows ] && git clone https://github.com/hernad/G7-windows.git
 
 cd G7-windows
 
-
+[ -f ../$FILE ] && rm $FILE
 
 git checkout $BRANCH -f
 
@@ -17,6 +19,11 @@ git merge origin/$BRANCH
 
 ./script/build-windows
 
-cp dist/G7-windows-i386.exe ..
+if [ $? != 0 ] ; then
+   echo "docker build ERROR"
+   exit 1
+fi
+
+cp dist/$FILE ..
 
 #rm bintray_api_key
