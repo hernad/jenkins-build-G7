@@ -2,9 +2,9 @@
 
 uname -a
 
-FILE=G7-windows-i386.exe
+FILE=G7-windows-x86_64.exe
  
-BRANCH=oo_boot2docker_iso
+BRANCH=amd64
 
 [ ! -d G7-windows ] && git clone https://github.com/hernad/G7-windows.git
 
